@@ -49,7 +49,7 @@ const Login = () => {
     if (response.status === "ok") {
       setItem(USER, response.result);
       setItem(ACCESS_TOKEN, response.result.accessToken);
-      setItem(REFRESH_TOKEN, response.result.refreshToken);
+   //   setItem(REFRESH_TOKEN, response.result.refreshToken);
       setSuccess(response.status)
       console.log("Status Code",response.status)
       toast.success(`User LoggedIn Successfully`, {
