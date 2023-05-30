@@ -26,7 +26,7 @@ const Profile = () => {
 
 
   useEffect(() => {
-    console.log("params user", params.userId);
+    console.log("params user", params);
     dispatch(getUserProfile({ userId: params.userId }));
     setIsMyProfile(myProfile?._id === userProfile?.data?._id);
     setIsFollowing(feedData?.userData?.following?.find(item=>(item._id===params.userId)));

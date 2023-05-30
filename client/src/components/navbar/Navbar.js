@@ -8,7 +8,7 @@ import {AiOutlineLogout} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoading } from '../../redux/slice/appConfigSlice';
 import { axiosClient } from '../../utils/axiosClient';
-import { ACCESS_TOKEN, REFRESH_TOKEN, USER, removeItem } from '../../utils/localStorageManager';
+import { ACCESS_TOKEN, REFRESH_TOKEN, USER, getItem, removeItem } from '../../utils/localStorageManager';
 
 const Navbar = (props) => {
     const navigate=useNavigate();
@@ -18,7 +18,7 @@ const Navbar = (props) => {
       try {
         await axiosClient.post("/auth/logout");
         removeItem(ACCESS_TOKEN);
-        removeItem(REFRESH_TOKEN);
+        // removeItem(REFRESH_TOKEN);
         removeItem(USER);
         navigate("/login");
       } catch (error) {
@@ -26,7 +26,8 @@ const Navbar = (props) => {
       }
 
     }
-
+    const userData=getItem(USER);
+    console.log("userData.result.firstName",userData.result.firstName)
     const myProfile=useSelector(state=>state.appConfigReducer?.getMyInfo);
     console.log("myProfileData",myProfile)
 
