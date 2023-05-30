@@ -1,0 +1,55 @@
+.vortex-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login{
+    height:100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: "";
+    .login-box{
+        padding:40px;
+        border:2px solid;
+        min-width:400px;
+        border-radius: 25px;
+    }
+
+    .heading{
+        text-align: center;
+        font-weight: 600;
+    }
+    
+    label{
+        font-weight: bold;
+    }
+    
+    label,input{
+        display:block;
+        width:100%;
+        margin-block:8px;
+        border-radius: 10px;
+    }
+
+    input{
+        padding:8px 16px;
+    }
+
+    .submit{
+        background-color: #11b3f3;
+        border:none;
+        color:wheat
+    }
+
+    .submit:hover{
+        background-color: hsl(197, 71%, 50%);
+        font-weight: 800;
+    }
+
+    .login-foot{
+        text-align: center;
+        font-size: 18px;
+    }
+}

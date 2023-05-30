@@ -1,0 +1,66 @@
+.updateProfile {
+  margin-top: 20px;
+  align-items: center;
+  .update-head {
+    margin-left: 40%;
+    margin-bottom: 30px;
+  }
+  .container {
+    display: flex;
+    .left-part {
+     position: relative;
+      flex: 1;
+      gap: 20px;
+
+      .profile-img-update {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+        .file-label {
+          height: 80px;
+          width: 80px;
+          border-radius: 55%;
+          border: 2px dashed var(--accent-color);
+          cursor: pointer;
+        }
+
+        .profile-input {
+         // position: absolute;
+          margin-top: 100px;
+          margin-left: -110px;
+          display:none;
+        }
+        .profile-img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .delete-btn {
+        position: absolute;
+        background-color: rgb(250, 13, 4);
+        color: whitesmoke;
+        margin-top: 78px;
+        margin-left:90px;
+      }
+    }
+    .right-part {
+      flex: 2;
+      input {
+        display: block;
+        padding: 5px 10px;
+        margin: 10px;
+        width: 70%;
+        border: 1px solid var(--border-color);
+      }
+
+      .update-btn {
+        margin-left: 150px;
+        width: fit-content;
+      }
+    }
+  }
+}

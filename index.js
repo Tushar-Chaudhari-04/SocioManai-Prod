@@ -54,7 +54,7 @@ app.listen(process.env.PORT || 4001,(req,res)=>{
 //Cors used for body parser
 app.use(cors({
    credential:true,
-   origin:process.env.PORT
+   origin:process.env.CROS_ORIGIN
 }));                                
 app.use(express.json({
     limit:"10mb"

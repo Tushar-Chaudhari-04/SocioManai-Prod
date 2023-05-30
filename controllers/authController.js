@@ -96,7 +96,7 @@ const loginController=async(req,res)=>{
                             httpOnly:true,
                             secure:true
                         });
-                        res.send(success(200,{...data,accessToken,refreshToken}));
+                        res.send(success(200,{...data,accessToken}));
                     }else{
                         res.send(error(401,"Credentials are not correct...")); 
                     }

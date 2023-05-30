@@ -1,0 +1,53 @@
+.navbar{
+   position: sticky; 
+    width:100%;
+    height:60px;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    .container{
+      height: 100%;
+      max-width:1500px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top:auto;
+
+      .logoMain{
+        display:flex;
+        margin-left: 10px;
+        img{
+          width:40px;
+          height:40px;
+          margin-right: 10px;
+        }
+      }
+
+      .user-avatar{
+        width:32px;
+        height:32px;
+        border-radius: 50%;
+       
+        img{
+            width:100%;
+            height:100%;
+            
+        }
+    }
+    .nav-profile-head{
+      margin-left: 850px;
+    }
+    .right-side{
+      width:100px;
+      display:flex;
+      gap:20px;
+      align-items: center;
+      // justify-content: space-around;
+      
+      .logout-btn{
+        font-size: 1.5rem;
+        // width:28%;
+        // height:28%;
+      }
+    }
+    }
+}
