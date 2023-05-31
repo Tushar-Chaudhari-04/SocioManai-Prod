@@ -19,6 +19,7 @@ const verifyToken= async (req, res, next) => {
       process.env.ACCESS_TOKEN_SECERET_KEY
     );
 
+    console.log("verifyToken...",verifyToken)
     if (verifyToken) {
       req._id = verifyToken._id;
     } else {
