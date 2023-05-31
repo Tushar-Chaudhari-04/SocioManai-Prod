@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const {error,success}=require("../utils/responseWrapper");
 
 const verifyToken= async (req, res, next) => {
+  console.log("BeR TOKEMN",req?.headers?.authorization,req?.headers?.Authorization)
   if (
     !req.headers ||
     !req.headers.authorization ||
@@ -11,7 +12,7 @@ const verifyToken= async (req, res, next) => {
     res.send(error(401,"User is not Authorised"));
   }
   const accessToken = req.headers.authorization.split(" ")[1];
-
+  console.log("accessToken",accessToken);
   try {
     const verifyToken = jwt.verify(
       accessToken,
