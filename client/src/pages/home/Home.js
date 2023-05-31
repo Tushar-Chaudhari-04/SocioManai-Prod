@@ -11,7 +11,7 @@ const dispatch=useDispatch();
 useEffect(() => {  
       dispatch(getMyInfo());
       //getData();
-    }, [])
+    }, [dispatch])
     
     const getData=async()=>{
         console.log("Refresh Token in POST Call",getItem(REFRESH_TOKEN))
