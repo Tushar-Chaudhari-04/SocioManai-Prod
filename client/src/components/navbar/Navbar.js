@@ -27,7 +27,7 @@ const Navbar = (props) => {
 
     }
     const userData=getItem(USER);
-    console.log("userData.result.firstName",userData.result.firstName)
+    console.log("userData.result.firstName",userData?.result?.firstName)
     const myProfile=useSelector(state=>state.appConfigReducer?.getMyInfo);
     console.log("myProfileData",myProfile)
 
