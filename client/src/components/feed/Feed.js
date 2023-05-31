@@ -13,7 +13,7 @@ const Feed = () => {
 
   useEffect(() => {
     dispatch(getFeedData());
-  }, [feedData,dispatch]);
+  }, [feedData]);
 
   return (
     <div className="feed">
