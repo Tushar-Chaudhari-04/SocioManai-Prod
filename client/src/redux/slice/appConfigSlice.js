@@ -4,6 +4,7 @@ import { axiosClient } from "../../utils/axiosClient";
 export const getMyInfo=createAsyncThunk("/user/getMyProfile",async(body)=>{
     try {
         const response=await axiosClient.get("/user/getMyProfile");
+        console.log("My Profile Data Actual",response);
         console.log("My Profile Data",response.result);
         return response.result;
     } catch (err) {

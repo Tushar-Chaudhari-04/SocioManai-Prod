@@ -12,7 +12,7 @@ import { TOAST_FAILURE } from "../App";
 
 export const axiosClient = axios.create({
   baseURL:process.env.REACT_APP_SERVER_BASE_URL,
-  withCredentials: true,
+ // withCredentials: true,
 });
 
 //Interceptors used to call refresh token once access token is expired
@@ -22,6 +22,7 @@ export const axiosClient = axios.create({
 axiosClient.interceptors.request.use((request) => {
   store.dispatch(setLoading(true));
   const accessToken = getItem(ACCESS_TOKEN);
+  console.log("accessToken...",accessToken)
   request.headers["Authorization"] = `Bearer ${accessToken}`;
   return request;
 });
@@ -31,7 +32,7 @@ axiosClient.interceptors.response.use(
   async (response) => {
     store.dispatch(setLoading(false));
     const data = response.data;
-    console.log("response interceptor data", data);
+    console.log("response interceptor data",response, data);
     if (data.status === "ok") {
       return data;
     }
