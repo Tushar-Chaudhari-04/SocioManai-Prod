@@ -18,7 +18,7 @@ const Navbar = (props) => {
       try {
         await axiosClient.post("/auth/logout");
         removeItem(ACCESS_TOKEN);
-        // removeItem(REFRESH_TOKEN);
+        removeItem(REFRESH_TOKEN);
         removeItem(USER);
         navigate("/login");
       } catch (error) {

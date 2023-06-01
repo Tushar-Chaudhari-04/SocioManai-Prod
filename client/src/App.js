@@ -19,7 +19,7 @@ export const TOAST_FAILURE = "toast_failure";
 function App() {
   const isLoading = useSelector((state) => state.appConfigReducer.isLoading);
   const loadingRef = useRef(null);
-  const toastData = useSelector((state) => state.appConfigReducer.toastData);
+ // const toastData = useSelector((state) => state.appConfigReducer.toastData);
 
   useEffect(() => {
     if (isLoading) {
@@ -29,18 +29,18 @@ function App() {
     }
   }, [isLoading]);
 
-  useEffect(() => {
-    switch (toastData.type) {
-        case TOAST_SUCCESS:
-            toast.success(toastData.message);
-            break;
-        case TOAST_FAILURE:
-            toast.error(toastData.message);
-            break;
-            default:
-              toast.error(toastData.message);
-    }
-}, [toastData]);
+//   useEffect(() => {
+//     switch (toastData.type) {
+//         case TOAST_SUCCESS:
+//             toast.success(toastData.message);
+//             break;
+//         case TOAST_FAILURE:
+//             toast.error(toastData.message);
+//             break;
+//             default:
+//               toast.error(toastData.message);
+//     }
+// }, [toastData]);
 
 
   return (

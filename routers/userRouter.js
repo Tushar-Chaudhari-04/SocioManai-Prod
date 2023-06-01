@@ -2,6 +2,12 @@ const router=require("express").Router();
 const userController=require("../controllers/userController");
 const verifyToken=require("../middleware/verifyToken");
 
+// router.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
+
 router.post("/follow",verifyToken,userController.followAndUnfollowController);
 router.get("/getFeedData",verifyToken,userController.getFeed);
 router.get("/myPosts",verifyToken,userController.getMyPosts);

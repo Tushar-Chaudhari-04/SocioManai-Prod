@@ -10,9 +10,19 @@ import store from "../redux/store";
 import { setLoading, showToast } from "../redux/slice/appConfigSlice";
 import { TOAST_FAILURE } from "../App";
 
+let baseURL = 'http://localhost:4000/';
+console.log('env is ', process.env.NODE_ENV);
+if(process.env.NODE_ENV === 'production') {
+    baseURL = process.env.REACT_APP_SERVER_BASE_URL
+}
 export const axiosClient = axios.create({
-  baseURL:process.env.REACT_APP_SERVER_BASE_URL,
- // withCredentials: true,
+  baseURL,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  withCredentials: true,
 });
 
 //Interceptors used to call refresh token once access token is expired
@@ -82,7 +92,7 @@ axiosClient.interceptors.response.use(
         return axios(originalRequest);
       } else {
         removeItem(ACCESS_TOKEN);
-      //  removeItem(REFRESH_TOKEN);
+        removeItem(REFRESH_TOKEN);
         console.log("Hi Tushar");
         window.location.replace(
           `${process.env.REACT_APP_SERVER_BASE_URL}/login`

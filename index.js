@@ -8,6 +8,7 @@ const cookieParser=require('cookie-parser');
 const cloudinary = require('cloudinary').v2;
 const moment=require('moment');
 const path=require('path');
+const router = express.Router();
 
 //Auth Router  
 const authRouter=require("./routers/authRouter");
@@ -52,10 +53,25 @@ app.listen(process.env.PORT || 4001,(req,res)=>{
 
 //App using middlewares
 //Cors used for body parser
+
+
+let origin = 'http://localhost:3000';
+console.log('here env', process.env.NODE_ENV);
+if(process.env.NODE_ENV === 'production') {
+    origin = process.env.CROS_ORIGIN;
+}
+
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     next();
+//   });
+
 app.use(cors({
    credential:true,
-   origin:process.env.CROS_ORIGIN
-}));                                
+   origin:origin,
+   optionSuccessStatus: 200
+}));
+
 app.use(express.json({
     limit:"10mb"
 }
